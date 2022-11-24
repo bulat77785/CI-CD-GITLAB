@@ -1,0 +1,62 @@
+stages:
+    - build
+    - codeStyle
+    - integrationTest
+    - deploy
+
+building:
+    stage: build
+    tags:
+        - navi
+    script:
+        - ./bins.sh
+        - cd src/cat
+        - make s21_cat
+        - cd ../grep
+        - make s21_grep
+    artifacts:
+        paths:
+            - src/cat/s21_cat
+            - src/grep/s21_grep
+        expire_in: 30 days
+    after_script:
+        - ./telegram.sh
+
+codeStyle:
+    stage: codeStyle
+    tags:
+        - navi
+    script:
+        - echo "Using clang-format utility"
+        - cd src/cat
+        - make check
+        - cd ../grep
+        - make check
+    after_script:
+        - ./telegram.sh
+
+makeTest:
+    stage: integrationTest
+    tags:
+        - navi
+    script:
+        - cd src/cat
+        - make test
+        - cd ../grep
+        - make test
+    after_script:
+        - ./telegram.sh
+    artifacts:
+        paths:
+            - ./status
+    when: on_success
+
+deploy:
+    stage: deploy
+    tags:
+        - navi
+    script:
+        - ./deploy.sh
+    after_script:
+        - ./telegram.sh
+    when: manual
