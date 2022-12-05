@@ -159,17 +159,6 @@ echo "Test 14"
         fi
 
 echo "Test 15"
-    ./s21_grep -vo option test.txt > s21_grep_res
-    grep -vo option test.txt > grep_res
-    DIFF_RES="$(diff -s s21_grep_res grep_res)"
-        if [ "$DIFF_RES" == "Files s21_grep_res and grep_res are identical" ]
-            then
-              (( COUNTER_SUCCESS++ ))
-            else
-              (( COUNTER_FAIL++ ))
-        fi
-
-echo "Test 16"
     ./s21_grep -ic option test.txt > s21_grep_res
     grep -ic option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -180,7 +169,7 @@ echo "Test 16"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 17"
+echo "Test 16"
     ./s21_grep -il option test.txt > s21_grep_res
     grep -il option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -191,7 +180,7 @@ echo "Test 17"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 18"
+echo "Test 17"
     ./s21_grep -in option test.txt > s21_grep_res
     grep -in option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -202,7 +191,7 @@ echo "Test 18"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 19"
+echo "Test 18"
     ./s21_grep -ih option test.txt > s21_grep_res
     grep -ih option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -213,7 +202,7 @@ echo "Test 19"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 20"
+echo "Test 19"
     ./s21_grep -is option test.txt > s21_grep_res
     grep -is option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -224,7 +213,7 @@ echo "Test 20"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 21"
+echo "Test 20"
     ./s21_grep -io option test.txt > s21_grep_res
     grep -io option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -235,18 +224,7 @@ echo "Test 21"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 22"
-    ./s21_grep -cl option test.txt > s21_grep_res
-    grep -cl option test.txt > grep_res
-    DIFF_RES="$(diff -s s21_grep_res grep_res)"
-        if [ "$DIFF_RES" == "Files s21_grep_res and grep_res are identical" ]
-            then
-              (( COUNTER_SUCCESS++ ))
-            else
-              (( COUNTER_FAIL++ ))
-        fi
-
-echo "Test 23"
+echo "Test 21"
     ./s21_grep -cn option test.txt > s21_grep_res
     grep -cn option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -257,7 +235,7 @@ echo "Test 23"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 24"
+echo "Test 22"
     ./s21_grep -ch option test.txt > s21_grep_res
     grep -ch option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -268,7 +246,7 @@ echo "Test 24"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 25"
+echo "Test 23"
     ./s21_grep -cs option test.txt > s21_grep_res
     grep -cs option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -279,7 +257,7 @@ echo "Test 25"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 26"
+echo "Test 24"
     ./s21_grep -co option test.txt > s21_grep_res
     grep -co option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -290,7 +268,7 @@ echo "Test 26"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 27"
+echo "Test 25"
     ./s21_grep -ln option test.txt > s21_grep_res
     grep -ln option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -301,7 +279,7 @@ echo "Test 27"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 28"
+echo "Test 26"
     ./s21_grep -lh option test.txt > s21_grep_res
     grep -lh option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -312,7 +290,7 @@ echo "Test 28"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 29"
+echo "Test 27"
     ./s21_grep -ls option test.txt > s21_grep_res
     grep -ls option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -323,7 +301,7 @@ echo "Test 29"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 30"
+echo "Test 28"
     ./s21_grep -lo option test.txt > s21_grep_res
     grep -lo option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -334,7 +312,7 @@ echo "Test 30"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 31"
+echo "Test 29"
     ./s21_grep -nh option test.txt > s21_grep_res
     grep -nh option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -345,7 +323,7 @@ echo "Test 31"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 32"
+echo "Test 30"
     ./s21_grep -ns option test.txt > s21_grep_res
     grep -ns option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -356,7 +334,7 @@ echo "Test 32"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 33"
+echo "Test 31"
     ./s21_grep -no option test.txt > s21_grep_res
     grep -no option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -367,7 +345,7 @@ echo "Test 33"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 34"
+echo "Test 32"
     ./s21_grep -hs option test.txt > s21_grep_res
     grep -hs option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -378,7 +356,7 @@ echo "Test 34"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 35"
+echo "Test 33"
     ./s21_grep -ho option test.txt > s21_grep_res
     grep -ho option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -389,7 +367,7 @@ echo "Test 35"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 36"
+echo "Test 34"
     ./s21_grep -so option test.txt > s21_grep_res
     grep -so option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -400,7 +378,7 @@ echo "Test 36"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 37"
+echo "Test 35"
     ./s21_grep -e option -e me test.txt > s21_grep_res
     grep -e option -e me test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -411,7 +389,7 @@ echo "Test 37"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 38"
+echo "Test 36"
     ./s21_grep -e option test.txt > s21_grep_res
     grep -e option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -422,7 +400,7 @@ echo "Test 38"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 39"
+echo "Test 37"
     ./s21_grep -f patt.txt test.txt > s21_grep_res
     grep -f patt.txt test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -433,7 +411,7 @@ echo "Test 39"
               (( COUNTER_FAIL++ ))
         fi
 
-echo "Test 40"
+echo "Test 38"
     ./s21_grep -f patt.txt -e option test.txt > s21_grep_res
     grep -f patt.txt -e option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -445,7 +423,7 @@ echo "Test 40"
         fi
 
 
-echo "Test 41"
+echo "Test 39"
     ./s21_grep -iv option test.txt > s21_grep_res
     grep -iv option test.txt > grep_res
     DIFF_RES="$(diff -s s21_grep_res grep_res)"
@@ -460,3 +438,11 @@ rm -rf grep_res s21_grep_res
 
 echo "SUCCESS: $COUNTER_SUCCESS"
 echo "FAIL: $COUNTER_FAIL"
+
+if [ "$COUNTER_FAIL" == "0" ]
+        then
+                echo "all test was pass"
+        else
+                echo "WTF?"
+                exit 1
+fi

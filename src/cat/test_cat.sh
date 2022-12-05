@@ -184,3 +184,11 @@ rm -rf cat_res s21_cat_res
 
 echo "SUCCESS: $COUNTER_SUCCESS"
 echo "FAIL: $COUNTER_FAIL"
+
+if [ "$COUNTER_FAIL" == "0" ]
+	then
+		echo "all test was pass"
+	else
+		echo "WTF?"
+		exit 1
+fi

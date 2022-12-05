@@ -9,7 +9,6 @@ building:
     tags:
         - navi
     script:
-        - ./bins.sh
         - cd src/cat
         - make s21_cat
         - cd ../grep
@@ -27,29 +26,24 @@ codeStyle:
     tags:
         - navi
     script:
-        - echo "Using clang-format utility"
-        - cd src/cat
-        - make check
-        - cd ../grep
-        - make check
+        - cd src
+        - ./qwest.sh
     after_script:
+        - echo "$CI_JOB_STATUS"
         - ./telegram.sh
 
-makeTest:
+integrationTest:
     stage: integrationTest
     tags:
         - navi
+    when: on_success
     script:
         - cd src/cat
-        - make test
+        - bash ./test_cat.sh
         - cd ../grep
-        - make test
+        - bash ./test_grep.sh
     after_script:
         - ./telegram.sh
-    artifacts:
-        paths:
-            - ./status
-    when: on_success
 
 deploy:
     stage: deploy

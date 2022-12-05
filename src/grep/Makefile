@@ -1,6 +1,6 @@
 C_FLags=-Wall -Werror -Wextra -std=c11
 
-all: build
+all: build test
 
 build: s21_grep
 
@@ -11,12 +11,5 @@ test: s21_grep
 	bash test_grep.sh
 
 check: s21_grep.c
-	python3 ../../materials/linters/cpplint.py --extensions=c *.c
-	cppcheck --enable=all --suppress=missingIncludeSystem  *.c *.h
-
-#clean:
-	rm -rf s21_grep
-leaks:
-	make test
-	leaks -atExit -- ./s21_cat:
-#	make clean
+	clang-format -n ../grep/*.c
+#	clang-format -i ../grep/*.c
